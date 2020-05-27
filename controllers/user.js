@@ -1,57 +1,6 @@
 const User=require('../models/user');
-// const jwt = require('jsonwebtoken')
-// const bcrypt = require('bcryptjs');
-const helper = require('../helper/common');
-// async function addUser(req,res)
-// {
-//     try{
-//         let user=await User.findOne({email:req.body.email});
-//         if(user)
-//         {
-//             res.status(401).send('User already exists');
-//         }
-//         else
-//         {
-//             let user=new User(req.body);
-//             let result= await user.save();
-//             res.status(200).send("User registered Successfully");
-//         }   
-//     }
-//     catch(e)
-//     {
-//         console.log('error in adding user',e);
-//         res.status(500).send(e);
-//     }
-// }
 
-// async function authUser(req,res)
-// {
-//     try{
-//         let user=await User.findOne({email:req.body.email});
-//         if(!user)
-//         {
-//             res.status(401).send('User does not exist');
-//         }
-//         if(user.password == req.body.password)
-//         {
-//             console.log(user);
-//             res.status(200).send(user);
-//         }
-//         else{
-//             res.status(400).send('Invalid Usrname Passwod');
-//         }
-//     }
-//     catch(e)
-//     {
-//         console.log('error occured in authUser',e);
-//         res.status(500).send(e);
-//     }
-// }
-// const transporter = nodemailer.createTransport(sendgridTransport({
-//     auth: {
-//       api_key: process.env.SENDGRID_API_KEY
-//     }
-//   }))
+const helper = require('../helper/common');
 
 
 // signup

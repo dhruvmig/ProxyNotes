@@ -12,7 +12,6 @@ async function forgotPassword(req,res)
         user.resetNo=randomNo;
         let resp=await user.save();
         console.log(user.resetNo);
-        // res.status(200).send(user)
         sgMail.setApiKey(process.env.SENDGRID_API_KEY);
         
             const msg = {
@@ -25,18 +24,18 @@ async function forgotPassword(req,res)
             };
        
 
-        // (async () => {
-        //     try {
-        //       await sgMail.send(msg);
-        //       res.status(200).send('A mail has been sent to you')
-        //     } catch (error) {
-        //       console.error(error);
-        //         res.status(500).send(error)
-        //       if (error.response) {
-        //         console.error(error.response.body)
-        //       }
-        //     }
-        //   })();
+        (async () => {
+            try {
+              await sgMail.send(msg);
+              res.status(200).send('A mail has been sent to you')
+            } catch (error) {
+              console.error(error);
+                res.status(500).send(error)
+              if (error.response) {
+                console.error(error.response.body)
+              }
+            }
+          })();
     }
     catch(e)
     {
